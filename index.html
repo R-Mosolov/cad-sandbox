@@ -8,12 +8,22 @@
         border-left: 1px solid black;
         border-bottom: 1px solid black;
       }
+
+      .obj {
+        height: 150px;
+        width: 100px;
+        background-color: blue;
+      }
     </style>
   </head>
 
 <body class="app">
   <script>
-    console.log('Test 2')
+    const obj = document.createElement('div');
+    const app = document.querySelector('.app');
+
+    obj.classList.add('obj');
+    app.appendChild(obj);
   </script>
 </body>
 
