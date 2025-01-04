@@ -8,22 +8,34 @@
         border-left: 1px solid black;
         border-bottom: 1px solid black;
       }
-
-      .obj {
-        height: 150px;
-        width: 100px;
-        background-color: blue;
-      }
     </style>
   </head>
 
 <body class="app">
   <script>
+    // Создание холста
     const obj = document.createElement('div');
     const app = document.querySelector('.app');
 
+    // Добавление физических свойств объекту
+    obj.style.height = '150px';
+    obj.style.width = '100px';
+    obj.style.backgroundColor = 'blue';
+
+    // Добавление объекта на холст
     obj.classList.add('obj');
     app.appendChild(obj);
+
+    // Закрепление координат по осям X и Y за объектом
+    const objHeight = obj.getBoundingClientRect().height;
+    const objCoords = `h-${objHeight}, w-unk.`;
+    const coordsBox = document.createElement('div');
+    const coordsElem = document.createElement('span');
+    coordsElem.style.color = 'white';
+    coordsElem.innerHTML = objCoords;
+    coordsBox.appendChild(coordsElem);
+    obj.appendChild(coordsBox);
+    console.log('objHeight', objHeight);
   </script>
 </body>
 
